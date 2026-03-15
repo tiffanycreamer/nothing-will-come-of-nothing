@@ -1,10 +1,172 @@
+body{
+margin:0;
+background:black;
+color:white;
+font-family:'Cinzel',serif;
+overflow:hidden;
+}
 
-body{margin:0;background:black;color:white;font-family:serif;overflow:hidden}
-.background{position:fixed;width:100%;height:100%;background:url("media/background.jpg") center/cover no-repeat;z-index:-5;}
-.fog{position:fixed;width:100%;height:100%;object-fit:cover;opacity:.3;z-index:-4;}
-.tree{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:75vh}
-.rope{position:absolute;top:10%;left:50%;transform-origin:top center;height:30vh;animation:swing 6s infinite}
-.woman{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:40vh}
-@keyframes swing{0%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(2deg)}100%{transform:translateX(-50%) rotate(-2deg)}}
-.grain{position:fixed;width:100%;height:100%;background:url("media/grain.png");opacity:.2;pointer-events:none;}
-.title-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+/* Background */
+
+.background{
+position:fixed;
+width:100%;
+height:100%;
+background:url("media/background.jpg") center/cover no-repeat;
+filter:brightness(.45);
+z-index:-5;
+}
+
+/* Fog */
+
+.fog{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.35;
+z-index:-4;
+}
+
+/* Tree */
+
+.tree{
+position:absolute;
+bottom:-10vh;
+left:50%;
+transform:translateX(-50%);
+height:95vh;
+z-index:-3;
+opacity:.85;
+}
+
+/* Rope */
+
+.rope{
+position:absolute;
+top:6vh;
+left:50%;
+transform-origin:top center;
+height:32vh;
+animation:swing 7s ease-in-out infinite;
+z-index:-2;
+}
+
+@keyframes swing{
+0%{transform:translateX(-50%) rotate(-2deg)}
+50%{transform:translateX(-50%) rotate(2deg)}
+100%{transform:translateX(-50%) rotate(-2deg)}
+}
+
+/* Woman */
+
+.woman{
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+height:42vh;
+z-index:-1;
+}
+
+/* Grain */
+
+.grain{
+position:fixed;
+width:100%;
+height:100%;
+background:url("media/grain.png");
+opacity:.2;
+pointer-events:none;
+mix-blend-mode:overlay;
+}
+
+/* Title */
+
+.title-container{
+position:absolute;
+bottom:12vh;
+width:100%;
+text-align:center;
+animation:fadeIn 3s ease forwards;
+}
+
+.title{
+font-size:3.6vw;
+letter-spacing:.45vw;
+font-weight:700;
+text-shadow:0 0 25px rgba(255,255,255,.25);
+margin-bottom:15px;
+}
+
+.subtitle{
+font-size:1vw;
+letter-spacing:.25vw;
+opacity:.7;
+margin-bottom:25px;
+}
+
+/* Form */
+
+.email-form{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+.email-form input{
+background:rgba(0,0,0,.6);
+border:1px solid rgba(255,255,255,.4);
+padding:14px;
+color:white;
+width:260px;
+font-size:14px;
+}
+
+.email-form button{
+padding:14px 26px;
+background:white;
+border:none;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.email-form button:hover{
+background:#ddd;
+}
+
+/* Fade */
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(15px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.title{
+font-size:9vw;
+letter-spacing:2px;
+}
+
+.subtitle{
+font-size:3.5vw;
+}
+
+.email-form{
+flex-direction:column;
+align-items:center;
+}
+
+.email-form input{
+width:80%;
+}
+
+.email-form button{
+width:80%;
+}
+
+}
