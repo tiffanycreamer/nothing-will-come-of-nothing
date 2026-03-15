@@ -98,10 +98,11 @@ body {
 .eyebrow {
   margin: 0 0 18px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.1rem, 1vw + 0.9rem, 1.6rem);
-  color: rgba(236, 231, 222, 0.72);
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
+  font-size: clamp(1rem, 1vw + 0.85rem, 1.45rem);
+  font-weight: 500;
+  color: rgba(236, 231, 222, 0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   opacity: 0;
   transform: translateY(10px);
   animation: revealUp 1.2s ease forwards 0.2s;
@@ -114,11 +115,13 @@ body {
   align-items: center;
   gap: 0.05em;
   font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  line-height: 0.88;
+  font-weight: 500;
+  line-height: 0.84;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  text-shadow: 0 0 24px rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.035em;
+  text-shadow:
+    0 0 24px rgba(255, 255, 255, 0.05),
+    0 0 60px rgba(0, 0, 0, 0.35);
 }
 
 .title span {
@@ -148,8 +151,9 @@ body {
   margin: 28px 0 34px;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.5rem, 2vw, 2.1rem);
+  font-weight: 400;
   font-style: italic;
-  color: #cc8d8b;
+  color: #a96b69;
   opacity: 0;
   transform: translateY(14px);
   animation: revealUp 1.2s ease forwards 1.35s;
@@ -158,14 +162,14 @@ body {
 .signup-panel {
   width: min(760px, 100%);
   padding: 22px 22px 18px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(
     to bottom,
-    rgba(18, 18, 18, 0.32),
-    rgba(9, 9, 9, 0.5)
+    rgba(20, 20, 20, 0.22),
+    rgba(8, 8, 8, 0.46)
   );
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   border-radius: 18px;
   opacity: 0;
   transform: translateY(16px);
@@ -258,6 +262,7 @@ body {
   margin: 28px 0 0;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(236, 231, 222, 0.82);
