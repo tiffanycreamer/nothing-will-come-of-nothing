@@ -1,28 +1,89 @@
-<div class="title-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nothing Will Come of Nothing</title>
+  <meta
+    name="description"
+    content="Official teaser site for Nothing Will Come of Nothing. Be first to see the trailer."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="background" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="fog fog-one" aria-hidden="true"></div>
+    <div class="fog fog-two" aria-hidden="true"></div>
 
-<h1 class="title">
-NOTHING<br>
-WILL COME<br>
-OF NOTHING
-</h1>
+    <main class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">a psychological horror film</p>
 
-<p class="subtitle">
-THE TRAILER ARRIVES SOON
-</p>
+        <h1 class="title">
+          <span>Nothing</span>
+          <span>Will Come of</span>
+          <span>Nothing</span>
+        </h1>
 
-<form action="https://submit-form.com/YOUR_FORMSPARK_ID" method="POST" class="email-form">
+        <p class="tagline">Some lives should never begin.</p>
 
-<input
-type="email"
-name="email"
-placeholder="ENTER YOUR EMAIL"
-required
->
+        <section class="signup-panel" aria-label="Trailer signup">
+          <p class="signup-copy">Be first to see the trailer</p>
 
-<button type="submit">
-NOTIFY ME
-</button>
+          <!-- Replace YOUR_FORMSPARK_ID with your real Formspark form ID -->
+          <form
+            class="signup-form"
+            action="https://submit-form.com/YOUR_FORMSPARK_ID"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_redirect"
+              value="https://yourusername.github.io/your-repo-name/?submitted=true"
+            />
 
-</form>
+            <!-- Honeypot field for bots -->
+            <input
+              type="text"
+              name="_gotcha"
+              class="hidden-field"
+              tabindex="-1"
+              autocomplete="off"
+            />
 
-</div>
+            <label class="sr-only" for="email">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+              inputmode="email"
+              autocomplete="email"
+            />
+
+            <button type="submit">Notify Me</button>
+          </form>
+
+          <p class="privacy-note">Private. No spam.</p>
+          <p class="success-message" id="successMessage" hidden>
+            You’re on the list.
+          </p>
+        </section>
+
+        <p class="coming-soon">Coming Soon</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

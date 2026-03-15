@@ -1,6 +1,9 @@
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const successMessage = document.getElementById("successMessage");
 
-window.addEventListener('click',()=>{
-const wind=document.getElementById('wind');
-wind.volume=0.2;
-wind.play();
-},{once:true})
+  if (params.get("submitted") === "true" && successMessage) {
+    successMessage.hidden = false;
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+})();
