@@ -1,3 +1,13 @@
+```css
+@font-face {
+  font-family: "Snowblack";
+  src: url("fonts/Snowblack.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ----------- COLOR SYSTEM ----------- */
+
 :root {
   --bg: #090909;
   --text: #ece7de;
@@ -24,9 +34,13 @@ body {
   color: var(--text);
 }
 
+/* ----------- BODY FONT ----------- */
+
 body {
   font-family: "Inter", sans-serif;
 }
+
+/* ----------- PAGE STRUCTURE ----------- */
 
 .page-shell {
   position: relative;
@@ -34,6 +48,8 @@ body {
   overflow: hidden;
   background: #060606;
 }
+
+/* ----------- BACKGROUND ----------- */
 
 .background {
   position: absolute;
@@ -54,6 +70,8 @@ body {
     linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.42));
   pointer-events: none;
 }
+
+/* ----------- FOG EFFECT ----------- */
 
 .fog {
   position: absolute;
@@ -78,6 +96,8 @@ body {
   animation: driftTwo 30s ease-in-out infinite alternate;
 }
 
+/* ----------- HERO ----------- */
+
 .hero {
   position: relative;
   z-index: 1;
@@ -95,6 +115,8 @@ body {
   text-align: center;
 }
 
+/* ----------- SUBTITLE ----------- */
+
 .eyebrow {
   margin: 0 0 18px;
   font-family: "Cormorant Garamond", serif;
@@ -108,20 +130,21 @@ body {
   animation: revealUp 1.2s ease forwards 0.2s;
 }
 
+/* ----------- TITLE FONT ----------- */
+
 .title {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.05em;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  line-height: 0.84;
+  font-family: "Snowblack", serif;
+  line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.06em;
   text-shadow:
-    0 0 24px rgba(255, 255, 255, 0.05),
-    0 0 60px rgba(0, 0, 0, 0.35);
+    0 0 24px rgba(255, 255, 255, 0.04),
+    0 0 60px rgba(0, 0, 0, 0.4);
 }
 
 .title span {
@@ -147,6 +170,8 @@ body {
   animation: fogReveal 1.4s ease forwards 1.1s;
 }
 
+/* ----------- TAGLINE ----------- */
+
 .tagline {
   margin: 28px 0 34px;
   font-family: "Cormorant Garamond", serif;
@@ -158,6 +183,8 @@ body {
   transform: translateY(14px);
   animation: revealUp 1.2s ease forwards 1.35s;
 }
+
+/* ----------- SIGNUP PANEL ----------- */
 
 .signup-panel {
   width: min(760px, 100%);
@@ -175,6 +202,8 @@ body {
   transform: translateY(16px);
   animation: revealUp 1.2s ease forwards 1.65s;
 }
+
+/* ----------- FORM ----------- */
 
 .signup-copy {
   margin: 0 0 14px;
@@ -200,18 +229,6 @@ body {
   background: var(--input-bg);
   color: var(--text);
   font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.signup-form input[type="email"]::placeholder {
-  color: rgba(236, 231, 222, 0.5);
-}
-
-.signup-form input[type="email"]:focus {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
-  background: rgba(20, 22, 24, 0.72);
 }
 
 .signup-form button {
@@ -227,42 +244,14 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow:
-    0 0 24px rgba(164, 22, 26, 0.22),
-    0 0 48px rgba(164, 22, 26, 0.12),
-    inset 0 0 12px rgba(255, 255, 255, 0.08);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
-.signup-form button:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.04);
-  box-shadow:
-    0 0 28px rgba(164, 22, 26, 0.35),
-    0 0 56px rgba(164, 22, 26, 0.2),
-    inset 0 0 12px rgba(255, 255, 255, 0.1);
-}
-
-.signup-form button:active {
-  transform: translateY(0);
-}
-
-.privacy-note,
-.success-message {
-  margin: 14px 0 0;
-  font-size: 0.95rem;
-  color: var(--soft);
-}
-
-.success-message {
-  color: #d8e8cf;
-}
+/* ----------- COMING SOON ----------- */
 
 .coming-soon {
   margin: 28px 0 0;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(236, 231, 222, 0.82);
@@ -271,15 +260,7 @@ body {
   animation: revealUp 1.2s ease forwards 2s;
 }
 
-.hidden-field,
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
+/* ----------- ANIMATIONS ----------- */
 
 @keyframes fogReveal {
   0% {
@@ -322,68 +303,4 @@ body {
     transform: translateX(-3%) translateY(-10px);
   }
 }
-
-@media (max-width: 700px) {
-  /* iOS Safari darkens elements with both transform + filter applied to
-     a background-image div. Removing them on mobile fixes it. */
-  .background {
-    transform: none;
-    filter: none;
-  }
-
-  /* Also lighten the vignette further on mobile */
-  .vignette {
-    background:
-      radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.22) 100%),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.26));
-  }
-
-  .hero {
-    padding: 32px 16px;
-  }
-
-  .signup-panel {
-    padding: 18px 16px 16px;
-    border-radius: 16px;
-  }
-
-  .signup-form {
-    grid-template-columns: 1fr;
-  }
-
-  .signup-form button,
-  .signup-form input[type="email"] {
-    width: 100%;
-    height: 46px;
-    font-size: 0.92rem;
-  }
-
-  .tagline {
-    margin: 22px 0 28px;
-  }
-
-  .coming-soon {
-    margin-top: 24px;
-    letter-spacing: 0.08em;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-
-  .eyebrow,
-  .title span,
-  .tagline,
-  .signup-panel,
-  .coming-soon {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-}
+```
