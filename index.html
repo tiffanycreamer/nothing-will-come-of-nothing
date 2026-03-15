@@ -1,176 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nothing Will Come of Nothing — a psychological horror film. Coming soon." />
-  <meta property="og:title" content="Nothing Will Come of Nothing" />
-  <meta property="og:description" content="Some things cannot be undone. Coming soon." />
-  <meta property="og:type" content="website" />
-  <title>Nothing Will Come of Nothing</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nothing Will Come of Nothing</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Film grain overlay -->
-  <div class="grain" aria-hidden="true"></div>
+<div class="background"></div>
 
-  <!-- Vignette -->
-  <div class="vignette" aria-hidden="true"></div>
+<video class="fog" autoplay muted loop>
+<source src="media/fog.mp4" type="video/mp4">
+</video>
 
-  <!-- Scene: background sky/ground layers -->
-  <div class="scene" aria-hidden="true">
-    <div class="sky"></div>
-    <div class="ground"></div>
-    <div class="tree-container">
-      <!-- SVG tree with rope -->
-      <svg class="tree-svg" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
-        <!-- Main trunk -->
-        <path d="M200 520 L198 380 L194 260 L190 180 L192 120 L196 60" stroke="#0a0a0a" stroke-width="18" fill="none" stroke-linecap="round"/>
-        <!-- Gnarled branches -->
-        <path d="M196 180 Q160 155 120 140 Q90 128 60 120" stroke="#0a0a0a" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <path d="M60 120 Q40 115 20 122" stroke="#0a0a0a" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M120 140 Q110 125 115 108" stroke="#0a0a0a" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <!-- Main rope-bearing branch (left, long) -->
-        <path d="M194 140 Q155 118 110 108 Q80 100 55 95" stroke="#0a0a0a" stroke-width="12" fill="none" stroke-linecap="round"/>
-        <!-- Right branches -->
-        <path d="M192 200 Q228 175 265 162 Q295 152 325 148" stroke="#0a0a0a" stroke-width="9" fill="none" stroke-linecap="round"/>
-        <path d="M325 148 Q342 143 358 150" stroke="#0a0a0a" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M193 240 Q232 225 268 218" stroke="#0a0a0a" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M191 150 Q200 130 208 115" stroke="#0a0a0a" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <!-- Upper small branches -->
-        <path d="M193 100 Q178 80 170 62" stroke="#0a0a0a" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M194 85 Q205 68 210 50" stroke="#0a0a0a" stroke-width="4" fill="none" stroke-linecap="round"/>
+<img src="media/tree.png" class="tree">
+<img src="media/rope.png" class="rope">
+<img src="media/woman.png" class="woman">
 
-        <!-- Rope hanging from branch — animated via CSS class -->
-        <g class="rope-group">
-          <!-- Rope line from branch down -->
-          <line class="rope-line" x1="90" y1="103" x2="90" y2="310" stroke="#6b5c3e" stroke-width="2.5" stroke-linecap="round"/>
-          <!-- Noose loop at bottom -->
-          <ellipse class="rope-noose" cx="90" cy="318" rx="14" ry="9" stroke="#6b5c3e" stroke-width="2.5" fill="none"/>
-        </g>
-      </svg>
+<div class="grain"></div>
 
-      <!-- Silhouette figure -->
-      <div class="figure-wrap">
-        <svg class="figure-svg" viewBox="0 0 80 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
-          <!-- Head -->
-          <ellipse cx="40" cy="12" rx="10" ry="12" fill="#080808"/>
-          <!-- Hair flowing down -->
-          <path d="M30 12 Q24 30 26 50" stroke="#080808" stroke-width="4" fill="none"/>
-          <path d="M50 12 Q56 28 54 48" stroke="#080808" stroke-width="3" fill="none"/>
-          <!-- Neck -->
-          <rect x="37" y="22" width="6" height="8" fill="#080808"/>
-          <!-- Torso / dress with pronounced pregnant belly -->
-          <path d="M28 30 Q18 45 16 70 Q14 88 18 105 Q22 115 40 118 Q58 115 62 105 Q66 88 64 70 Q62 45 52 30 Z" fill="#080808"/>
-          <!-- Belly bulge -->
-          <ellipse cx="40" cy="82" rx="22" ry="20" fill="#080808"/>
-          <!-- Arms down at sides -->
-          <path d="M28 35 Q16 55 12 75" stroke="#080808" stroke-width="6" fill="none" stroke-linecap="round"/>
-          <path d="M52 35 Q64 55 68 75" stroke="#080808" stroke-width="6" fill="none" stroke-linecap="round"/>
-          <!-- Dress skirt flare -->
-          <path d="M18 105 Q10 130 14 155 Q40 162 66 155 Q70 130 62 105 Z" fill="#080808"/>
-          <!-- Feet -->
-          <ellipse cx="26" cy="156" rx="9" ry="5" fill="#080808"/>
-          <ellipse cx="54" cy="156" rx="9" ry="5" fill="#080808"/>
-        </svg>
-      </div>
-    </div>
+<div class="title-container">
+<h1>NOTHING<br>WILL COME<br>OF NOTHING</h1>
+<p>THE TRAILER ARRIVES SOON</p>
 
-    <!-- Fog layers (CSS animated) -->
-    <div class="fog fog-1" aria-hidden="true"></div>
-    <div class="fog fog-2" aria-hidden="true"></div>
-    <div class="fog fog-3" aria-hidden="true"></div>
-    <div class="fog fog-4" aria-hidden="true"></div>
-  </div>
+<form action="https://submit-form.com/YOUR_FORMSPARK_ID" method="POST">
+<input type="email" name="email" placeholder="Enter email" required>
+<button>NOTIFY ME</button>
+</form>
+</div>
 
-  <!-- Main UI -->
-  <main class="ui-layer">
+<audio id="wind" loop>
+<source src="media/wind.mp3">
+</audio>
 
-    <!-- Top studio tag -->
-    <p class="studio-tag" aria-label="Production company">A PALE GROUND PICTURE</p>
+<script src="script.js"></script>
 
-    <!-- Title block -->
-    <div class="title-block" aria-label="Film title: Nothing Will Come of Nothing">
-      <h1 class="title-main title-reveal" aria-hidden="true">
-        <span class="word" data-word="NOTHING">NOTHING</span>
-        <span class="title-divider">WILL COME OF</span>
-        <span class="word" data-word="NOTHING">NOTHING</span>
-      </h1>
-      <!-- Screen-reader accessible title -->
-      <span class="sr-only">Nothing Will Come of Nothing</span>
-    </div>
-
-    <!-- Tagline -->
-    <p class="tagline tagline-reveal">Some things cannot be undone.</p>
-
-    <!-- Signup form -->
-    <div class="signup-block signup-reveal">
-      <p class="signup-label">Be notified when it begins.</p>
-      <form
-        class="signup-form"
-        action="https://submit-form.com/YOUR_FORMSPARK_ID"
-        method="POST"
-        id="signup-form"
-      >
-        <!-- Honeypot anti-spam -->
-        <input type="hidden" name="_redirect" value="false" />
-        <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
-
-        <div class="input-row">
-          <input
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            autocomplete="email"
-            aria-label="Email address"
-            class="email-input"
-          />
-          <button type="submit" class="submit-btn" aria-label="Submit email">
-            <span class="btn-text">ENTER</span>
-            <span class="btn-arrow" aria-hidden="true">→</span>
-          </button>
-        </div>
-
-        <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
-      </form>
-    </div>
-
-    <!-- Bottom metadata -->
-    <footer class="footer-tag">
-      <span>© PALE GROUND PICTURES</span>
-      <span class="footer-sep">·</span>
-      <span>ALL RIGHTS RESERVED</span>
-    </footer>
-
-  </main>
-
-  <!-- Audio -->
-  <audio id="ambient-audio" loop preload="auto">
-    <source src="media/wind.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- Audio toggle -->
-  <button class="audio-toggle" id="audio-toggle" aria-label="Toggle ambient sound" title="Toggle sound">
-    <svg id="audio-icon-on" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-    </svg>
-    <svg id="audio-icon-off" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-      <line x1="23" y1="9" x2="17" y2="15"></line>
-      <line x1="17" y1="9" x2="23" y2="15"></line>
-    </svg>
-  </button>
-
-  <script src="script.js"></script>
 </body>
 </html>
