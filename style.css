@@ -349,6 +349,8 @@ body {
   .signup-form button,
   .signup-form input[type="email"] {
     width: 100%;
+    height: 46px;
+    font-size: 0.92rem;
   }
 
   .tagline {
