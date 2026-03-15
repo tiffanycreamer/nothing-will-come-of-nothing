@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap');
 
 /* ----------- COLOR SYSTEM ----------- */
 
@@ -132,7 +132,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.05em;
-  font-family: "Lovers Quarrel", cursive;
+  font-family: "Euphoria Script", cursive;
   letter-spacing: 0.02em;
   line-height: 1.05;
   text-shadow:
