@@ -6,4 +6,4 @@
     successMessage.hidden = false;
     window.history.replaceState({}, document.title, window.location.pathname);
   }
-})();
+})(); 
